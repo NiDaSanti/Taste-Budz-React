@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.non-auth-nav {
+    font-family: 'Roboto Mono', monospace;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+
+.non-auth-landing,
+.non-auth-sign-in,
+.guest {
+    margin: 0 auto;
+    a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #000;
+    }
+}

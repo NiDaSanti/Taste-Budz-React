@@ -1,0 +1,57 @@
+.ingredient-container {
+  display: flex;
+  width: 55%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #fff;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: 8px;
+  border-bottom-width: 8px;
+  border-top-color: #9bd7d5;
+  border-bottom-color: #9bd7d5;
+  // -webkit-box-shadow: 0px 0px 9px 2px rgba(255,255,255,0.74); 
+}
+
+.exit-btn-contain {
+  display: flex;
+  flex-wrap: nowrap;
+  height: auto;
+  width: 100%;
+}
+
+.exit {
+  font-size: 30px;
+  color: rgba(254,116,26,0.74);
+  cursor: pointer;
+}
+
+.detailed-ing-pixel {
+  width: 100px;
+  height: 100px;
+}
+
+.name-details, .original-name-details, .detail-original, .measure-amount {
+  font-family: 'Just Another Hand', cursive;
+  width: auto;
+}
+
+.detailed-ing-in-metrics {
+  background-color: #FFF;
+  // color: #fff;
+  margin: 0 auto;
+  margin-top: 15px;
+  box-shadow: 0px 0px 9px 2px rgba(254,116,26,0.74);
+  border-radius: 15px;
+  padding: 15px;
+  width: 45%;
+}
+

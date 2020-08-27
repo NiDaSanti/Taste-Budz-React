@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.sign-in {
+  font-family: 'Roboto Mono', monospace;
+}
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sign-in-contain {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sign-in-email,
+.sign-in-password,
+.sign-in-btn {
+  margin-top: 1em;
+  padding: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+
+  color: #000;
+}
+
+.error-msg {
+  font-family: 'Roboto Mono', monospace;
+}
