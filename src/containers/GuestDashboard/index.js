@@ -8,6 +8,7 @@ class GuestDashboard extends React.Component {
         recipes: [],
         modalScreenOpen: false,
         summaryPiece: false,
+        
     }
 
     componentDidMount() {
