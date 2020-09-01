@@ -10,7 +10,7 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
-console.log('hello', config.apiKey);
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
@@ -31,8 +31,33 @@ class Firebase {
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
-  doPasswordUpdate = password =>
-    this.auth.currentUser.updatePassword(password);
+  doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
+
+// this is suppose to merge auth and db user api
+  onAuthUserListener = (next, fallback) => this.auth.onAuthStateChanged(authUser => {
+    if((authUser)) {
+      this.user(authUser.uid)
+      .get()
+      .then(snapshot => {
+        const dbUser = snapshot.data();
+        authUser.providerData.forEach(profile => {
+          console.log('SignIn provider: ' + profile.providerId);
+        })
+// merge auth and db user
+        authUser = {
+          uid: authUser.uid,
+          email: authUser.email,
+          emailVerified: authUser.emailVerified,
+          providerData: authUser.providerData,
+          photoUrl: authUser.photoUrl,
+          age: authUser.age,
+          bio: authUser.bio,
+          ...dbUser
+        };
+        next(authUser);
+      });
+    } else { fallback(); }
+  });
 
     // *** User API ***
 
