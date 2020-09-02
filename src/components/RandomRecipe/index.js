@@ -4,8 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faInfo } from '@fortawesome/free-solid-svg-icons';
 // import { useSpring, animated } from 'react-spring';
+import posed from 'react-pose';
 library.add(faUtensils, faInfo);
 
+const ForkAndKnife = posed.div({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1,
+    boxShadow: '0px 0px 0px rgba(0,0,0,0)'
+  },
+  hover: {
+    scale: 1.2,
+    boxShadow: '0px 5px 10px rgba(0,0,0,0)'
+  },
+  press: {
+    scale: 1.1,
+    boxShadow: '0px 2px 5px rgba(0,0,0,0)'
+  }
+});
 
 const RandomRecipe = ({ recipes, ingredientScreen }) => {
    console.log("check for props ", recipes);
@@ -21,6 +38,7 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
          return <div className = 'recipe-contain' key={recipe.id}>
                   <img className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
                   <div className = 'ingredient-button'>
+                  <ForkAndKnife className = 'food'>
                     <FontAwesomeIcon 
                       // style = {{
                       //   opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
@@ -29,12 +47,13 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                       //     output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]})
                       //     .interpolate(x => `scale(${x})`)
                       // }}
-                      onClick = {()=>ingredientScreen()} 
-                      className = 'food' 
+                      onClick = {()=>ingredientScreen()}  
                       icon = {faUtensils} />
+                  </ForkAndKnife>
+                  <ForkAndKnife className = 'summary'>
                     <FontAwesomeIcon 
-                      className = 'summary' 
                       icon = {faInfo} />
+                  </ForkAndKnife>
                   </div>
                   <div className = 'text-container'>
                      <h1 className = 'food-title'>{recipe.title}</h1>
@@ -48,7 +67,10 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
    );
  };
 
+
 export default RandomRecipe;
+export {ForkAndKnife}
+
 
 /*I 
 NEED TO WORK ON THE STRINGS OF THE CONTENT

@@ -1,10 +1,11 @@
 import React from 'react';
 import './extended.scss';
-import RandomRecipe from '../RandomRecipe';
+import RandomRecipe, {ForkAndKnife} from '../RandomRecipe';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 library.add(faTimes);
+
 
 const ExtendedIngredients = (props) => {
   let ingredient = props.recipes;
@@ -22,7 +23,9 @@ const ExtendedIngredients = (props) => {
         console.log('now this is the test ', detailsIng);
         return <div className = 'ingredient-container' key = {ing.id}>
                 <div className = 'exit-btn-contain'>
-                  <FontAwesomeIcon onClick = {props.ingredientScreen} className = 'exit' icon = {faTimes} />
+                  <ForkAndKnife className = 'exit'>
+                    <FontAwesomeIcon onClick = {props.ingredientScreen} className = 'exit' icon = {faTimes} />
+                  </ForkAndKnife>
                 </div>
                 {detailsIng.map((det => {
                   let ingMeasurements = det.measures.us;
@@ -51,6 +54,7 @@ const ExtendedIngredients = (props) => {
   )
 }
 export default ExtendedIngredients;
+
 
 
 

@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
+import PosedRouter from '../App';
+// import posed from 'react-pose';
+// import Landing from '../Landing';
+// import SignIn from '../SignIn';
+// import GuestDashboard from '../../containers/GuestDashboard';
 import './nav.scss';
 
 const Navigation = () => (
@@ -37,16 +42,22 @@ const NavigationAuth = () => (
 );
 
 const NavigationNonAuth = () => (
-  <ul className = 'non-auth-nav'>
-    <li className = 'non-auth-landing'>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li className = 'non-auth-sign-in'>
-      <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-    <li className = 'guest'>
-      <Link to={ROUTES.CONTINUE_AS_GUEST}>Continue As Guest</Link>
-    </li>
-  </ul>
+    
+
+      <ul className = 'non-auth-nav'>
+        <li className = 'non-auth-landing'>
+          <Link to={ROUTES.LANDING}>Landing</Link>
+        </li>
+        <li className = 'non-auth-sign-in'>
+          <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        </li>
+        <li className = 'guest'>
+          <Link to={ROUTES.CONTINUE_AS_GUEST}>Continue As Guest</Link>
+        </li>
+      </ul>
+    
 );
+
 export default Navigation;
+
+
