@@ -102,10 +102,10 @@ const ExtendedIngredients = (props) => {
                   return <div className = 'detailed-ing-in-metrics' key = {det.id}>
                           <ZoomImage imageWidth={100} imageHeight={100} className = 'detailed-ing-pixel' key = {det.image} src = {'https://spoonacular.com/cdn/ingredients_100x100/' + ingredientImage} alt = 'Food' />
                           <ol>
-                            <li className = 'name-details'>{det.name}</li>
-                            <li className = 'original-name-details'>{det.originalName}</li>
+                            {/* <li className = 'name-details'>{det.name}</li> */}
+                            {/* <li className = 'original-name-details'>{det.originalName}</li> */}
                             <li className = 'detail-original' key = {det.original}>{det.original}</li>
-                            <li className = 'measure-amount'>{ingMeasurements.amount}{'\n'}{ingMeasurements.unitShort} or {ingMeasurements.amount}{'\n'}{ingMeasurements.unitLong}</li>
+                            {/* <li className = 'measure-amount'>{ingMeasurements.amount}{'\n'}{ingMeasurements.unitShort} or {ingMeasurements.amount}{'\n'}{ingMeasurements.unitLong}</li> */}
                           </ol>
                         </div>
 
