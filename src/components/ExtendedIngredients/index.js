@@ -1,11 +1,73 @@
 import React from 'react';
-import './extended.scss';
 import RandomRecipe, {ForkAndKnife} from '../RandomRecipe';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import posed from 'react-pose';
+import './extended.scss';
 library.add(faTimes);
 
+const Frame = posed.div({
+  init: {
+    applyAtEnd: { display: 'none' },
+    opacity: 0
+  },
+  zoom: {
+    applyAtStart: { display: 'block' },
+    opacity: 1
+  }
+});
+
+const transition = { duration: 400, ease: [0.08, 0.69, 0.2, 0.99] };
+
+const Image = posed.img({
+  init: {
+    position: 'static',
+    width: 'auto',
+    height: 'auto', 
+    transition,
+    flip: true
+  },
+  zoom: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    transition,
+    flip: true
+  }
+});
+
+class ZoomImage extends React.Component {
+  state = { isZoomed: false };
+
+  zoomIn() {
+    window.addEventListener('scroll', this.zoomOut);
+    this.setState({ isZoomed: true });
+  }
+
+  zoomOut = () => {
+    window.removeEventListener('scroll', this.zoomOut);
+    this.setState({ isZoomed: false });
+  };
+
+  toggleZoom = () => (this.state.isZoomed ? this.zoomOut() : this.zoomIn());
+
+  render() {
+    const { isZoomed } = this.state;
+    const { imageWidth, imageHeight, ...props } = this.props;
+    const pose = isZoomed ? 'zoom' : 'init';
+
+    return(
+      <div style = {{ width: imageWidth, height: imageHeight }}
+      onClick = {this.toggleZoom}>
+        <Frame pose={pose} className = 'frame' />
+        <Image pose={pose} {...props} />
+      </div>
+    )
+  }
+}
 
 const ExtendedIngredients = (props) => {
   let ingredient = props.recipes;
@@ -38,7 +100,7 @@ const ExtendedIngredients = (props) => {
                     ingredientImage = det.image;
                   }
                   return <div className = 'detailed-ing-in-metrics' key = {det.id}>
-                          <img className = 'detailed-ing-pixel' key = {det.image} src = {'https://spoonacular.com/cdn/ingredients_100x100/' + ingredientImage} alt = 'Food' />
+                          <ZoomImage imageWidth={100} imageHeight={100} className = 'detailed-ing-pixel' key = {det.image} src = {'https://spoonacular.com/cdn/ingredients_100x100/' + ingredientImage} alt = 'Food' />
                           <ol>
                             <li className = 'name-details'>{det.name}</li>
                             <li className = 'original-name-details'>{det.originalName}</li>
@@ -54,6 +116,7 @@ const ExtendedIngredients = (props) => {
   )
 }
 export default ExtendedIngredients;
+export { ZoomImage }
 
 
 

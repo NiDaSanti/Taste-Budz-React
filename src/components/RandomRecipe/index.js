@@ -5,8 +5,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faInfo } from '@fortawesome/free-solid-svg-icons';
 // import { useSpring, animated } from 'react-spring';
 import posed from 'react-pose';
+import {ZoomImage} from '../ExtendedIngredients';
 library.add(faUtensils, faInfo);
 
+/* this component does a hover animation for the fork and knife icon and info icon */
 const ForkAndKnife = posed.div({
   hoverable: true,
   pressable: true,
@@ -24,6 +26,7 @@ const ForkAndKnife = posed.div({
   }
 });
 
+/* this component creates a random recipe when the page is refreshed or loaded */
 const RandomRecipe = ({ recipes, ingredientScreen }) => {
    console.log("check for props ", recipes);
   //  const [ state, toggle ] = useState(true);
@@ -36,7 +39,7 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
           console.log('check dish type ', word);
          console.log("check for", recipe);
          return <div className = 'recipe-contain' key={recipe.id}>
-                  <img className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
+                  <ZoomImage className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
                   <div className = 'ingredient-button'>
                   <ForkAndKnife className = 'food'>
                     <FontAwesomeIcon 
