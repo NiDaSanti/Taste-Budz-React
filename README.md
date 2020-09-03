@@ -68,6 +68,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 # Taste-Budz-React
+COLLABORATORS ARE ENCOURAGED TO DROP IN IDEAS BELOW ON WHAT THE USER CAN DO. LET'S ALL TRY TO REMAIN CONSISTANT WITH THE GOAL AT HAND WHICH IS......? IDK RIGHT NOW, IM WORKING ON THAT. HAHAHA!! <-------- IGNORE THAT LAUGH!
+MISSION STATEMENT COMING SOON.....
+
+
 Taste Budz mission is to allow the user to share their favorite dish to a community of other people.
 Users will have the ability to input a recipe of their choosing through their personal accounts.
 Users will have the option to share their recipes with other users.  to be continued ....
+
+
+
+#Log notes:
+The firebase is done as far as creating accounts.  With that being said, there is nothing else you can do after that at this time.  
+So far a random recipe renders in the GuestDashboard class Component. In human terms.... you can see a recipe on the screen with written
+instructions with an image of the meal. Lot's of them are yummy and I've never heard of or seem so much deliciousness. Ok, that's corny, but
+back to the current feature in the random recipe. Under the image, they're two icons, a fork with a knife, and "i" icon for information.
+The fork and knife icon renders another component called "ExtendedIngredients". Inside that component users can see the ingredients needed to create
+their meal. The "i" icon doesn't do anything at this time, however it will be changing in due time. The icons are animated and the images are clickable.
+Of course improvements are a must, but in due time....... nothing else to report at this time.
