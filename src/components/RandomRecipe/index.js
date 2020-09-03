@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './random-recipe.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
