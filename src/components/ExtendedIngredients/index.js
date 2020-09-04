@@ -4,8 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import posed from 'react-pose';
+import { tween } from 'popmotion';
 import './extended.scss';
 library.add(faTimes);
+
+// const IngredientPanel = posed.div({
+//   fullscreen: {
+//     width: '100vw',
+//     height: '100vh',
+//     transition: tween,
+//     flip: true
+//   },
+//   thumbnail: {
+//     width: 100,
+//     height: 100,
+//     transition: tween,
+//     flip: true
+//   }
+// })
 
 const Frame = posed.div({
   init: {
@@ -84,39 +100,47 @@ const ExtendedIngredients = (props) => {
         let detailsIng = ing.extendedIngredients;
         console.log('now this is the test ', detailsIng);
         return <div className = 'ingredient-container' key = {ing.id}>
-                <div className = 'exit-btn-contain'>
-                  <ForkAndKnife className = 'exit'>
-                    <FontAwesomeIcon onClick = {props.ingredientScreen} className = 'exit' icon = {faTimes} />
-                  </ForkAndKnife>
+                  <div className = 'exit-btn-contain'>
+                    <ForkAndKnife className = 'exit'>
+                      <FontAwesomeIcon onClick = {props.ingredientScreen} className = 'exit' icon = {faTimes} />
+                    </ForkAndKnife>
+                  </div>
+                  {detailsIng.map((det => {
+                    let ingMeasurements = det.measures.us;
+                    let ingredientImage = 'https://ya-webdesign.com/images250_/placeholder-image-png.png';
+                    console.log('Im testing this default image', ingredientImage);
+                    console.log('I need to see if this works ', det);
+                    console.log('A new line so I can understand the issue ', det.image);
+                    console.log('I need the metrics in U.S ', ingMeasurements.amount);
+                    if(det.image) {
+                      ingredientImage = det.image;
+                    }
+                    return <div className = 'detailed-ing-in-metrics' key = {det.id}>
+                            <ZoomImage 
+                              imageWidth={100} 
+                              imageHeight={100} 
+                              className = 'detailed-ing-pixel' 
+                              key = {det.image} 
+                              src = {'https://spoonacular.com/cdn/ingredients_100x100/' + ingredientImage} 
+                              alt = 'Food' />
+                            <ol>
+                              {/* <li className = 'name-details'>{det.name}</li> */}
+                              {/* <li className = 'original-name-details'>{det.originalName}</li> */}
+                              <li className = 'detail-original' key = {det.original}>{det.original}</li>
+                              {/* <li className = 'measure-amount'>{ingMeasurements.amount}{'\n'}{ingMeasurements.unitShort} or {ingMeasurements.amount}{'\n'}{ingMeasurements.unitLong}</li> */}
+                            </ol>
+                          </div>
+                  }))}
                 </div>
-                {detailsIng.map((det => {
-                  let ingMeasurements = det.measures.us;
-                  let ingredientImage = 'https://ya-webdesign.com/images250_/placeholder-image-png.png';
-                  console.log('Im testing this default image', ingredientImage);
-                  console.log('I need to see if this works ', det);
-                  console.log('A new line so I can understand the issue ', det.image);
-                  console.log('I need the metrics in U.S ', ingMeasurements.amount);
-                  if(det.image) {
-                    ingredientImage = det.image;
-                  }
-                  return <div className = 'detailed-ing-in-metrics' key = {det.id}>
-                          <ZoomImage imageWidth={100} imageHeight={100} className = 'detailed-ing-pixel' key = {det.image} src = {'https://spoonacular.com/cdn/ingredients_100x100/' + ingredientImage} alt = 'Food' />
-                          <ol>
-                            {/* <li className = 'name-details'>{det.name}</li> */}
-                            {/* <li className = 'original-name-details'>{det.originalName}</li> */}
-                            <li className = 'detail-original' key = {det.original}>{det.original}</li>
-                            {/* <li className = 'measure-amount'>{ingMeasurements.amount}{'\n'}{ingMeasurements.unitShort} or {ingMeasurements.amount}{'\n'}{ingMeasurements.unitLong}</li> */}
-                          </ol>
-                        </div>
-
-                }))}
-              </div>
       }))}
     </div>
   )
 }
 export default ExtendedIngredients;
 export { ZoomImage }
+              
+
+
 
 
 

@@ -78,6 +78,7 @@ Users will have the option to share their recipes with other users.  to be conti
 
 
 
+
 #Log notes:
 The firebase is done as far as creating accounts.  With that being said, there is nothing else you can do after that at this time.  
 So far a random recipe renders in the GuestDashboard class Component. In human terms.... you can see a recipe on the screen with written
