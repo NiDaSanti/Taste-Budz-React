@@ -87,3 +87,6 @@ back to the current feature in the random recipe. Under the image, they're two i
 The fork and knife icon renders another component called "ExtendedIngredients". Inside that component users can see the ingredients needed to create
 their meal. The "i" icon doesn't do anything at this time, however it will be changing in due time. The icons are animated and the images are clickable.
 Of course improvements are a must, but in due time....... nothing else to report at this time.
+
+#Log notes:
+After looking at the instructions. I found step by step instructions. Instead of having a long paragraph it can be written in a form of step by step instructions... so currently it's being changed...... nothing else to report at this time...

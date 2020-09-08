@@ -6,6 +6,7 @@ import { faUtensils, faInfo } from '@fortawesome/free-solid-svg-icons';
 // import { useSpring, animated } from 'react-spring';
 import posed from 'react-pose';
 import {ZoomImage} from '../ExtendedIngredients';
+import AnalyzeRecipeInstruction from '../AnalyzedRecipeInstruction'
 library.add(faUtensils, faInfo);
 
 /* this component does a hover animation for the fork and knife icon and info icon */
@@ -17,7 +18,7 @@ const ForkAndKnife = posed.div({
     boxShadow: '0px 0px 0px rgba(0,0,0,0)'
   },
   hover: {
-    scale: 1.2,
+    scale: 1.3,
     boxShadow: '0px 5px 10px rgba(0,0,0,0)'
   },
   press: {
@@ -25,6 +26,8 @@ const ForkAndKnife = posed.div({
     boxShadow: '0px 2px 5px rgba(0,0,0,0)'
   }
 });
+
+
 
 /* this component creates a random recipe when the page is refreshed or loaded */
 const RandomRecipe = ({ recipes, ingredientScreen }) => {
@@ -54,7 +57,8 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                      <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
                      <h4 className = 'dish-type'>{recipe.dishTypes}</h4>
                      <p className = 'instructions'><strong>Instructions: </strong> {recipe.instructions}</p>
-                  </div>   
+                     {/* <AnalyzeRecipeInstruction recipes={recipes} /> */}
+                  </div>  
                </div>;
        })}
      </>
