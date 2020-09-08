@@ -56,9 +56,10 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                      <h1 className = 'food-title'>{recipe.title}</h1>
                      <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
                      <h4 className = 'dish-type'>{recipe.dishTypes}</h4>
-                     <p className = 'instructions'><strong>Instructions: </strong> {recipe.instructions}</p>
+                     {/* <p className = 'instructions'><strong>Instructions: </strong> {recipe.instructions}</p> */}
                      {/* <AnalyzeRecipeInstruction recipes={recipes} /> */}
                   </div>  
+                  <AnalyzeRecipeInstruction recipes={recipes} />
                </div>;
        })}
      </>

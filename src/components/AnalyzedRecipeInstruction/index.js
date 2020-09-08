@@ -5,9 +5,9 @@ const AnalyzedRecipeInstruction = ({recipes}) => {
   return (
     <>
       {recipes.map((analyze) => {
-        console.log(analyze.analyzedInstructions);
+        {/* console.log(analyze.analyzedInstructions); */}
         analyze.analyzedInstructions.map((instruct) => {
-          console.log('deep dive into ', instruct.steps);
+          {/* console.log('deep dive into ', instruct.steps); */}
           instruct.steps.map((is) => {
             console.log('deeper within ', is)
             return <div>
