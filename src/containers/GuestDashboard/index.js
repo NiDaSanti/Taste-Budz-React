@@ -1,6 +1,7 @@
 import React from 'react';
 import RandomRecipe from '../../components/RandomRecipe';
 import ExtendedIngredients from '../../components/ExtendedIngredients';
+// import AnalyzedRecipeInstruction from '../../components/AnalyzedRecipeInstruction';
 
 class GuestDashboard extends React.Component {
     state = {
@@ -50,6 +51,7 @@ class GuestDashboard extends React.Component {
                 ingredientScreen = {this.openModalScreen}
                 recipeSummaryLog = {this.handleSummaryOfRandomRecipe}>
                 {ingredientModalScreen}
+                {/* <AnalyzedRecipeInstruction recipes = {this.state.recipes} /> */}
                 </RandomRecipe>) : null}
           </div>
       )

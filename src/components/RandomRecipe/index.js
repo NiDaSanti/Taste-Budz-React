@@ -3,10 +3,8 @@ import './random-recipe.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faInfo } from '@fortawesome/free-solid-svg-icons';
-// import { useSpring, animated } from 'react-spring';
 import posed from 'react-pose';
 import {ZoomImage} from '../ExtendedIngredients';
-import AnalyzeRecipeInstruction from '../AnalyzedRecipeInstruction'
 library.add(faUtensils, faInfo);
 
 /* this component does a hover animation for the fork and knife icon and info icon */
@@ -27,8 +25,6 @@ const ForkAndKnife = posed.div({
   }
 });
 
-
-
 /* this component creates a random recipe when the page is refreshed or loaded */
 const RandomRecipe = ({ recipes, ingredientScreen }) => {
    console.log("check for props ", recipes);
@@ -39,7 +35,8 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
           let word = recipe.dishTypes;
           console.log('check dish type ', word);
          console.log("check for", recipe);
-         return <div className = 'recipe-contain' key={recipe.id}>
+         return (
+                <div className = 'recipe-contain' key={recipe.id}>
                   <ZoomImage className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
                   <div className = 'ingredient-button'>
                   <ForkAndKnife className = 'food'>
@@ -56,12 +53,16 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                      <h1 className = 'food-title'>{recipe.title}</h1>
                      <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
                      <h4 className = 'dish-type'>{recipe.dishTypes}</h4>
-                     {/* <p className = 'instructions'><strong>Instructions: </strong> {recipe.instructions}</p> */}
-                     {/* <AnalyzeRecipeInstruction recipes={recipes} /> */}
+                     {recipe.analyzedInstructions.map((ana, index) => {
+                       const cookSteps = ana.steps;
+                       console.log('LOOK HERE ', cookSteps);
+                       return <div key = {`${cookSteps} - ${index}`}>
+                         {cookSteps.map((cook, i) => (<p key={i}>{cook.step}</p>))}
+                       </div>
+                     })}
                   </div>  
-                  <AnalyzeRecipeInstruction recipes={recipes} />
-               </div>;
-       })}
+               </div>
+       )})}
      </>
    );
  };
