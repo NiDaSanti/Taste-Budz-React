@@ -57,7 +57,7 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                        const cookSteps = ana.steps;
                        console.log('LOOK HERE ', cookSteps);
                        return <div key = {`${cookSteps} - ${index}`}>
-                         {cookSteps.map((cook, i) => (<p key={i}>{cook.step}</p>))}
+                         {cookSteps.map((cook, i) => (<p className = 'instructions' key={i}>{cook.step}</p>))}
                        </div>
                      })}
                   </div>  

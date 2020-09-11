@@ -90,3 +90,6 @@ Of course improvements are a must, but in due time....... nothing else to report
 
 #Log notes:
 After looking at the instructions. I found step by step instructions. Instead of having a long paragraph it can be written in a form of step by step instructions... so currently it's being changed...... nothing else to report at this time...
+
+#Log notes:
+In the guest page in the recipe information. It was changed to look more organized fashion. Need to clean up code.
