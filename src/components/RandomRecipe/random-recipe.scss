@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .guest-page-dashboard {
   width: 50%;
@@ -7,21 +8,21 @@
 }
 
 .recipe-contain {
-  width: 75%;
+  width: 600px;
   display: grid;
   grid-template-columns: 36.5%, 36.5%;
   margin: 0 auto;
   padding: 25px;
-  background-color: #20576E;
-  color: #fff;
-  -webkit-box-shadow: 0px 0px 9px 2px rgba(255,138,73,0.74); 
-  box-shadow: 0px 0px 9px 2px rgba(255,138,73,0.74);
+  background-color: #FFFDD0;
+  color: #003366;
+  // -webkit-box-shadow: 0px 0px 9px 2px rgba(255,138,73,0.74); 
+  // box-shadow: 0px 0px 9px 2px rgba(255,138,73,0.74);
 }
 
 .picture {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   width: 100%;
   border-radius: 25px;
   -webkit-box-shadow: 1px 1px 16px 3px rgba(80,61,39,0.56); 
@@ -38,33 +39,23 @@
   margin: 8px;
 }
 
-.summary {
+.food, .summary {
   font-size: 30px;
   text-align: center;
-  cursor: pointer;
-}
-
-.food {
-  font-size: 30px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.sprinkle {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
   cursor: pointer;
 }
 
 .food-title {
-  font-family: 'Handlee', cursive;
+  font-family: 'Roboto Mono', monospace;
   text-align: center; 
 }
 
+.culture, .dish-type {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .instructions {
-  font-family: 'Handlee', cursive;
+  font-family: 'Roboto Mono', monospace;
   text-align: left;
   max-height: 300px;
   overflow: auto;
