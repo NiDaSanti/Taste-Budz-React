@@ -26,7 +26,7 @@ const ForkAndKnife = posed.div({
 });
 
 /* this component creates a random recipe when the page is refreshed or loaded */
-const RandomRecipe = ({ recipes, ingredientScreen }) => {
+const RandomRecipe = ({ recipes, ingredientScreen, instructionScreen }) => {
    console.log("check for props ", recipes);
    return (
      <>
@@ -41,17 +41,18 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                   <div className = 'ingredient-button'>
                   <ForkAndKnife className = 'food'>
                     <FontAwesomeIcon 
-                      onClick = {()=>ingredientScreen()}  
+                      onClick = {()=> ingredientScreen()}  
                       icon = {faUtensils} />
                   </ForkAndKnife>
                   <ForkAndKnife className = 'summary'>
                     <FontAwesomeIcon 
+                      onClick = {()=>  instructionScreen()}
                       icon = {faInfo} />
                   </ForkAndKnife>
                   </div>
                   <div className = 'text-container'>
                      <h1 className = 'food-title'>{recipe.title}</h1>
-                     <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
+                     {/* <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
                      <h4 className = 'dish-type'>{recipe.dishTypes}</h4>
                      {recipe.analyzedInstructions.map((ana, index) => {
                        const cookSteps = ana.steps;
@@ -59,7 +60,7 @@ const RandomRecipe = ({ recipes, ingredientScreen }) => {
                        return <div key = {`${cookSteps} - ${index}`}>
                          {cookSteps.map((cook, i) => (<p className = 'instructions' key={i}>{cook.step}</p>))}
                        </div>
-                     })}
+                     })} */}
                   </div>  
                </div>
        )})}

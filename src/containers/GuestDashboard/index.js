@@ -1,7 +1,7 @@
 import React from 'react';
 import RandomRecipe from '../../components/RandomRecipe';
 import ExtendedIngredients from '../../components/ExtendedIngredients';
-// import AnalyzedRecipeInstruction from '../../components/AnalyzedRecipeInstruction';
+import Instructions from '../../components/Instructions';
 
 class GuestDashboard extends React.Component {
     state = {
@@ -9,6 +9,7 @@ class GuestDashboard extends React.Component {
         recipes: [],
         modalScreenOpen: false,
         summaryPiece: false,
+        instructClicked: false,
         
     }
 
@@ -26,9 +27,9 @@ class GuestDashboard extends React.Component {
         }
     }
 
-    handleSummaryOfRandomRecipe = () => {
-        this.setState(prevState => ({summaryPiece: !prevState.summaryPiece}),
-        () => console.log(this.state.summaryPiece));
+    instructionsInfoIcon = () => {
+        this.setState(prevState => ({instructClicked: !prevState.instructClicked}),
+        () => console.log(this.state.instructClicked));
     }
 
     openModalScreen = () => {
@@ -40,18 +41,26 @@ class GuestDashboard extends React.Component {
         let ingredientModalScreen = <ExtendedIngredients 
                                         ingredientScreen = {this.openModalScreen} 
                                         recipes = {this.state.recipes} />
+        
+        let foodInstructions = <Instructions 
+                                recipes = {this.state.recipes} 
+                                instructionScreen = {this.instructionsInfoIcon} />
 
         if(this.state.modalScreenOpen === true) {
             return ingredientModalScreen;
+        }
+
+        if(this.state.instructClicked === true) {
+            return foodInstructions;
         }
       return (
           <div className = 'guest-page-dashboard'>
               {this.state.recipes ? (<RandomRecipe 
                 recipes = {this.state.recipes} 
                 ingredientScreen = {this.openModalScreen}
-                recipeSummaryLog = {this.handleSummaryOfRandomRecipe}>
+                instructionScreen = {this.instructionsInfoIcon}>
                 {ingredientModalScreen}
-                {/* <AnalyzedRecipeInstruction recipes = {this.state.recipes} /> */}
+                {foodInstructions}
                 </RandomRecipe>) : null}
           </div>
       )
