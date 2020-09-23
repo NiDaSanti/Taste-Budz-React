@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faInfo } from '@fortawesome/free-solid-svg-icons';
 import posed from 'react-pose';
 import {ZoomImage} from '../ExtendedIngredients';
+import ReactPlayer from 'react-player';
 library.add(faUtensils, faInfo);
 
 /* this component does a hover animation for the fork and knife icon and info icon */
@@ -52,18 +53,12 @@ const RandomRecipe = ({ recipes, ingredientScreen, instructionScreen }) => {
                   </div>
                   <div className = 'text-container'>
                      <h1 className = 'food-title'>{recipe.title}</h1>
-                     {/* <h3 className = 'culture'>Culture Type: {recipe.cuisines}</h3>
-                     <h4 className = 'dish-type'>{recipe.dishTypes}</h4>
-                     {recipe.analyzedInstructions.map((ana, index) => {
-                       const cookSteps = ana.steps;
-                       console.log('LOOK HERE ', cookSteps);
-                       return <div key = {`${cookSteps} - ${index}`}>
-                         {cookSteps.map((cook, i) => (<p className = 'instructions' key={i}>{cook.step}</p>))}
-                       </div>
-                     })} */}
                   </div>  
                </div>
        )})}
+       <div className = 'player'>
+         <ReactPlayer className = 'width-height' url = 'https://www.youtube.com/watch?v=cuM3bRSdD7I' />
+       </div>
      </>
    );
  };

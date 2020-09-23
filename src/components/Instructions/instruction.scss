@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.food-instruction-manual {
+  position: relative;
+  background-color: #fffdd0;
+  width: 50%;
+  margin: 0 auto;
+  padding: 25px;
+  font-family: 'Roboto Mono', monospace;
+  color: #003366;
+  .exit-instruction {
+    color: #003366;
+    font-size: 30px;
+  }
+
+  .food-view {
+    position: absolute;
+    right: 2em;
+    top: 7em;
+    width: 200px;
+    height: 100px;
+  }
+}
