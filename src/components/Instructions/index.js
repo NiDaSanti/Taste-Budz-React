@@ -6,6 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../Instructions/instruction.scss';
 library.add(faTimes);
 
+
 // const analyzedInstructions = (instruction) => {
 //   console.log(instruction);
 //   for(let i = 0; i < instruction.length; i++) {
