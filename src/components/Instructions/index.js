@@ -6,7 +6,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../Instructions/instruction.scss';
 library.add(faTimes);
 
-
 // const analyzedInstructions = (instruction) => {
 //   console.log(instruction);
 //   for(let i = 0; i < instruction.length; i++) {
@@ -18,6 +17,12 @@ library.add(faTimes);
 // const getTheFoodSteps = (ana) => {
 //   console.log(analyzedInstructions);
 // }
+// const exit = {
+
+// }
+// let exitIconKeyframes =  new KeyframeEffect()                              // do not disturb these lines
+// const animateX = new Animation(exitIconKeyframes, document.timeline);      // I'm trying my new own animation component but I don't know where to //go.
+
 
 const Instructions = (props) => {
   let exitInstructionsPage = <RandomRecipe/>;

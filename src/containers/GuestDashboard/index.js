@@ -2,6 +2,7 @@ import React from 'react';
 import RandomRecipe from '../../components/RandomRecipe';
 import ExtendedIngredients from '../../components/ExtendedIngredients';
 import Instructions from '../../components/Instructions';
+// import axios from 'axios';
 
 class GuestDashboard extends React.Component {
     state = {

@@ -92,4 +92,6 @@ Of course improvements are a must, but in due time....... nothing else to report
 After looking at the instructions. I found step by step instructions. Instead of having a long paragraph it can be written in a form of step by step instructions... so currently it's being changed...... nothing else to report at this time...
 
 #Log notes:
-In the guest page in the recipe information. It was changed to look more organized fashion. Need to clean up code.
+In the guest page in the recipe information. It was changed to look more organized fashion. Need to clean up code. 
+
+Started working on the firebase portion. What I really mean is that I'm attempting to build the profile page of the user, however even with a wireframe is proving to be difficult. Not so much the code, it's more of what exactly do you need to create to eventually have something that hasn't been thoughtout at this time. 

@@ -1,3 +1,31 @@
-.sign-up {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+.signup-heading {  
   font-family: 'Roboto Mono', monospace;
+  width: 14%;
+  margin: 0 auto;
 }
+
+.signup-container {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: grid;
+  grid-row-gap: 20px;
+  padding-top: 25px;
+}
+
+.signup-form {
+  height: 30px;
+}
+
+.signup-btn {
+  height: 40px;
+  background-color: #20576E;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+

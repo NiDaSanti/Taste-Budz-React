@@ -31,12 +31,12 @@
   display: block;
   width: 200px;
   height: auto;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-box-shadow: 1px 1px 16px 3px rgba(80,61,39,0.56); 
   box-shadow: 1px 1px 16px 3px rgba(80,61,39,0.56);
 }
 
-.ingredient-button{
+.ingredient-button {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;

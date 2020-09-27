@@ -8,8 +8,8 @@ import * as ROUTES from '../../constants/routes';
 import './sign-up.scss';
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <div className = 'signup-container'>
+    <h1 className = 'signup-heading'>SignUp</h1>
       <SignUpForm />
   </div>
 );
@@ -59,8 +59,9 @@ class SignUpFormBase extends Component {
     const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || email === '' || username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className = 'form-container' onSubmit={this.onSubmit}>
       <input
+        className = 'signup-form'
         name="username"
         value={username}
         onChange={this.onChange}
@@ -68,6 +69,7 @@ class SignUpFormBase extends Component {
         placeholder="Full Name"
       />
       <input
+        className = 'signup-form'
         name="email"
         value={email}
         onChange={this.onChange}
@@ -75,6 +77,7 @@ class SignUpFormBase extends Component {
         placeholder="Email Address"
       />
       <input
+      className = 'signup-form'
         name="passwordOne"
         value={passwordOne}
         onChange={this.onChange}
@@ -82,13 +85,14 @@ class SignUpFormBase extends Component {
         placeholder="Password"
       />
       <input
+        className = 'signup-form'
         name="passwordTwo"
         value={passwordTwo}
         onChange={this.onChange}
         type="password"
         placeholder="Confirm Password"
       />
-      <button  disabled = {isInvalid}type="submit">Sign Up</button>
+      <button  className = 'signup-btn' disabled = {isInvalid}type="submit">Sign Up</button>
 
       {error && <p>{error.message}</p>}
     </form>

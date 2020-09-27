@@ -41,7 +41,8 @@ class Firebase {
       .then(snapshot => {
         const dbUser = snapshot.data();
         authUser.providerData.forEach(profile => {
-          console.log('SignIn provider: ' + profile.providerId);
+          console.log('SignIn provider: ' + profile.providerId); 
+          console.log('Provider Specific UID ' + profile.uid);
         })
 // merge auth and db user
         authUser = {
