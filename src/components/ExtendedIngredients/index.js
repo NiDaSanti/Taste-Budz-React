@@ -94,7 +94,7 @@ const ExtendedIngredients = (props) => {
   }
 
   return(
-    <div style = {{backgroundColor: '#9bd7d5'}}>
+    <div style = {{backgroundColor: 'beige'}}>
       {ingredient.map((ing => {
         console.log(ing);
         let detailsIng = ing.extendedIngredients;
