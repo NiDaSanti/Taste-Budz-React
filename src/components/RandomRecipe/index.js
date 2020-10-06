@@ -47,7 +47,7 @@ const Videos = () => {
         return (
           <ReactPlayer
             className = 'width-height'
-            width = '450px'
+            width = '350px'
             height = '250px' 
             key = {i.url}
             url = {loadRandomVideo} />
@@ -69,7 +69,7 @@ const RandomRecipe = ({ recipes, ingredientScreen, instructionScreen }) => {
          console.log("check for", recipe);
          return (
                 <div className = 'recipe-contain' key={recipe.id}>
-                  <ZoomImage className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
+                  <img className = 'picture' src = {randomRecipeImage} alt = 'foodImage' />
                   <div className = 'ingredient-button'>
                   <ForkAndKnife className = 'food'>
                     <FontAwesomeIcon 

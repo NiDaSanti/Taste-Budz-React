@@ -57,7 +57,12 @@
 
 @media screen and(max-width: 590px) {
   .picture {
-    width: 200px;
-    height: 200px;
+    width: 98%;
+    height: 98%;
+  }
+
+  .player {
+    width: 98%;
+    margin: 0 auto;
   }
 }
