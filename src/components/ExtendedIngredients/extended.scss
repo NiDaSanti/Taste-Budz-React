@@ -1,38 +1,4 @@
-
-
-.detailed-ing-pixel {
-  width: 100px;
-  height: 100px;
-}
-
-.name-details, .original-name-details, .detail-original, .measure-amount {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 18px;
-  width: auto;
-}
-
-
-img {
-  cursor: zoom-in;
-  display: block;
-  max-width: auto;
-  margin: auto;
-}
-
-img.zoomed {
-  cursor: zoom-out;
-}
-
-.frame {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  background: white;
-  transform: translateZ(0);
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .ingredient-container {
   display: flex;
@@ -44,7 +10,6 @@ img.zoomed {
 
 .detailed-ing-in-metrics {
   background-color: #fff;
-  // max-width: 75%;
   width: 75%;
   margin: 0 auto;
   padding: 15px;
