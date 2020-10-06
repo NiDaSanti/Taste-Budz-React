@@ -26,6 +26,37 @@ const ForkAndKnife = posed.div({
   }
 });
 
+/* this component is attempting to load all videos related to my recipe creation  */
+const Videos = () => {
+  const santiUrls = [
+    'https://www.youtube.com/embed/z-DdfeYw60I', 
+    'https://www.youtube.com/embed/SSueVEKu9tE', 
+    'https://www.youtube.com/embed/cuM3bRSdD7I', 
+    'https://www.youtube.com/embed/eumYaDUOr3k', 
+    'https://www.youtube.com/embed/HwlqzGuiLO0', 
+    'https://www.youtube.com/embed/yygMlzUKDOM', 
+    'https://www.youtube.com/embed/RY74e2pczkg', 
+    'https://www.youtube.com/embed/HiNJeltwVZQ',
+  ];
+
+  let loadRandomVideo = santiUrls[Math.floor(Math.random() * 8)];
+
+  return(
+    <>
+      {santiUrls.map((url, i) => {
+        return (
+          <ReactPlayer
+            className = 'width-height'
+            width = '450px'
+            height = '250px' 
+            key = {i.url}
+            url = {loadRandomVideo} />
+        )
+      })}
+    </>
+  )
+}
+
 /* this component creates a random recipe when the page is refreshed or loaded */
 const RandomRecipe = ({ recipes, ingredientScreen, instructionScreen }) => {
    console.log("check for props ", recipes);
@@ -57,7 +88,7 @@ const RandomRecipe = ({ recipes, ingredientScreen, instructionScreen }) => {
                </div>
        )})}
        <div className = 'player'>
-         <ReactPlayer className = 'width-height' url = 'https://www.youtube.com/watch?v=cuM3bRSdD7I' />
+          <Videos />
        </div>
      </>
    );
