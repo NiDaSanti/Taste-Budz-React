@@ -9,7 +9,7 @@ import './sign-up.scss';
 
 const SignUpPage = () => (
   <div className = 'signup-container'>
-    <h1 className = 'signup-heading'>SignUp</h1>
+    <h1 className = 'signup-heading'>Sign Up</h1>
       <SignUpForm />
   </div>
 );

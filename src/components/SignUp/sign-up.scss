@@ -2,7 +2,7 @@
 
 .signup-heading {
   font-family: 'Roboto Mono', monospace;
-  width: 14%;
+  width: 20%;
   margin: 0 auto;
 }
 
@@ -20,12 +20,19 @@
 
 .signup-form {
   height: 30px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
 }
 
 .signup-btn {
   height: 40px;
   background-color: #20576e;
   color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+
+.sign-up {
   font-family: 'Roboto Mono', monospace;
   font-size: 20px;
 }
